@@ -6,7 +6,6 @@ import { Outfit } from "next/font/google"
 import { LayeredText } from "../about/components/layered-text"
 import { useState } from "react"
 import ContactModal from "./ContactModal"
-import InteractivePaint from "./InteractivePaint"
 
 const outfit = Outfit({ subsets: ["latin"] })
 
@@ -36,15 +35,6 @@ const specialties = [
 export default function HomeChatSection() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
-  const handleDrawingSend = async (_canvasDataURL: string, _message?: string) => {
-    // Email delivery is disabled on the static GitHub Pages build (no server).
-    // The drawing canvas stays as an interactive toy; we just reset the inputs.
-    const nameInput = document.querySelector('input[placeholder="Name"]') as HTMLInputElement
-    const contactInput = document.querySelector('input[placeholder="Contact handle"]') as HTMLInputElement
-    if (nameInput) nameInput.value = ""
-    if (contactInput) contactInput.value = ""
-  }
-
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -59,23 +49,6 @@ export default function HomeChatSection() {
           <p className="mb-8 text-lg text-gray-400 max-w-2xl mx-auto">
             Have an idea or project in mind? Let's talk about it!
           </p>
-          <div className="max-w-2xl mx-auto mb-8 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                className="w-full p-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
-                placeholder="Name"
-              />
-              <input
-                type="text"
-                className="w-full p-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
-                placeholder="Contact handle"
-              />
-            </div>
-            <div>
-              <InteractivePaint onSend={handleDrawingSend} />
-            </div>
-          </div>
           <div className="flex flex-col items-center space-y-4">
             <a
               href="mailto:celestenmy23@gmail.com"

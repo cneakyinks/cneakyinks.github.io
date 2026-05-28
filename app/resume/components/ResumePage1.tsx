@@ -10,6 +10,14 @@ const robotoMono = Roboto_Mono({
 export default function ResumePage1() {
   const experiences = [
     {
+      title: "IT Project Executive - SF Technologies Pte Ltd",
+      date: "May 2025 – Present · Singapore",
+      points: [
+        "Responsible for understanding business challenges and translating them into effective digital solutions.",
+        "Solutions involve conceptualising and proposing ideas, creating prototypes and designs, and testing for usability and functionality.",
+      ],
+    },
+    {
       title: "Student Intern - Future University Hakodate (Kansei Design Lab)",
       date: "Nov 2024 – Feb 2025",
       points: [

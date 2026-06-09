@@ -27,22 +27,28 @@ export default function DesktopNav() {
             <li>
               <DropdownMenu>
                 <DropdownMenuTrigger
-                  className={`text-lg hover:text-blue-400 hover:underline flex items-center ${pathname.startsWith("/about") || pathname === "/resume" ? "text-blue-400 underline" : ""}`}
+                  className={`group text-lg hover:text-blue-400 hover:underline flex items-center ${pathname.startsWith("/about") || pathname === "/resume" ? "text-blue-400 underline" : ""}`}
                 >
-                  About <ChevronDown className="ml-1 h-4 w-4" />
+                  About{" "}
+                  <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>
+                <DropdownMenuContent className="border-white/10 bg-black/80 text-white backdrop-blur-md">
+                  <DropdownMenuItem className="cursor-pointer focus:bg-cyan-400/20 focus:text-cyan-400">
                     <Link href="/about" className="w-full">
                       About Me
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer focus:bg-cyan-400/20 focus:text-cyan-400">
                     <Link href="/resume" className="w-full">
                       Resume
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => setIsContactModalOpen(true)}>Contact</DropdownMenuItem>
+                  <DropdownMenuItem
+                    onSelect={() => setIsContactModalOpen(true)}
+                    className="cursor-pointer focus:bg-cyan-400/20 focus:text-cyan-400"
+                  >
+                    Contact
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </li>

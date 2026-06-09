@@ -1,14 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
 import ResumePage1 from "./components/ResumePage1"
 import ResumePage2 from "./components/ResumePage2"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { fadeUp } from "@/lib/animations"
 
 export default function ResumePage() {
-  const [currentPage, setCurrentPage] = useState(1)
-
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white py-4 md:py-8 px-2 sm:px-4 relative">
       <div className="max-w-[1000px] mx-auto">
@@ -24,28 +21,11 @@ export default function ResumePage() {
           </svg>
         </div>
 
-        {/* Resume Content */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          {currentPage === 1 ? <ResumePage1 /> : <ResumePage2 />}
+        {/* Full resume on one continuous page */}
+        <motion.div variants={fadeUp} initial="hidden" animate="show">
+          <ResumePage1 />
+          <ResumePage2 />
         </motion.div>
-
-        {/* Page Navigation */}
-        <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 flex gap-2 md:gap-4 z-50">
-          <button
-            onClick={() => setCurrentPage(1)}
-            className={`p-2 rounded-full ${currentPage === 1 ? "bg-cyan-400 text-black" : "bg-gray-800 text-white"} shadow-lg`}
-            aria-label="Page 1"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-          <button
-            onClick={() => setCurrentPage(2)}
-            className={`p-2 rounded-full ${currentPage === 2 ? "bg-cyan-400 text-black" : "bg-gray-800 text-white"} shadow-lg`}
-            aria-label="Page 2"
-          >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-        </div>
       </div>
     </div>
   )

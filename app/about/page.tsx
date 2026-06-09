@@ -3,11 +3,11 @@
 import { useRef } from "react"
 import { motion } from "framer-motion"
 import { Outfit } from "next/font/google"
-import Image from "next/image"
 import { useState } from "react"
 import ContactModal from "../components/ContactModal"
 import Link from "next/link"
-import FloatingWorks from "../components/floating-works"
+import Moments from "../components/moments"
+import { fadeUp, fadeUpLg, staggerContainer } from "@/lib/animations"
 
 const outfit = Outfit({ subsets: ["latin"] })
 
@@ -85,46 +85,19 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-20">
         {/* Updated Header Section */}
         <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
           className="mb-32"
         >
-          <div className="flex flex-col md:grid md:grid-cols-[300px,1fr] gap-8 md:gap-12 items-center md:items-start max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative aspect-square w-full max-w-[220px] md:max-w-[300px] mx-auto"
-            >
-              <div className="relative h-full rounded-full overflow-hidden border-4 border-cyan-400/20">
-                <Image
-                  id="profile-image"
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-gfdGEFk1D6Mc1GZCSttLfvYGz6Rpvs.png"
-                  alt="Celeste Ng"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Personality traits floating around the image */}
-              
-              
-              
-            </motion.div>
-
-            <div className="space-y-6 w-full text-center md:text-left">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-6 w-full text-left">
               <div className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
+                <motion.div variants={fadeUpLg}>
                   <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white md:text-7xl mb-4">
                     I'm Celeste!
                   </h1>
-                  <p className="text-lg sm:text-xl flex flex-wrap gap-2 items-center text-gray-400 justify-center md:justify-start">
+                  <p className="text-lg sm:text-xl flex flex-wrap gap-2 items-center text-gray-400 justify-start">
                     <span className="relative inline-block cursor-pointer transition-all duration-300 hover:text-cyan-400">
                       Interaction Designer
                     </span>
@@ -136,59 +109,24 @@ export default function AboutPage() {
                 </motion.div>
 
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="max-w-full mx-auto md:mx-0 text-base sm:text-lg text-gray-400 px-4 md:px-0 text-center md:text-left"
+                  variants={fadeUp}
+                  className="max-w-full md:mx-0 text-base sm:text-lg text-gray-400 md:px-0 text-left"
                 >
                   I am an explorative interactive designer who brings ideas to life through dynamic experiences,
                   blending physical and digital interactions, with creativity and intent.
                 </motion.p>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="flex flex-wrap gap-4 justify-center md:justify-start"
+                  variants={fadeUp}
+                  className="flex flex-wrap gap-4 justify-start"
                 >
                   <Link href="/resume">
-                    <button className="group relative px-8 py-3 text-white overflow-hidden">
-                      <span className="relative z-10 flex items-center gap-2">Resume</span>
-                      <div className="absolute inset-0 rounded-full bg-black/50 backdrop-blur-sm" />
-                      <div className="absolute inset-0 rounded-full overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-600 opacity-50 blur transition-all group-hover:opacity-75" />
-                        <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
-                          <rect
-                            className="animate-flow-around"
-                            width="100%"
-                            height="100%"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          />
-                        </svg>
-                      </div>
+                    <button className="radius-button">
+                      <span>Resume</span>
                     </button>
                   </Link>
-                  <button
-                    onClick={() => setIsContactModalOpen(true)}
-                    className="group relative px-8 py-3 text-white overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">Let's Chat!</span>
-                    <div className="absolute inset-0 rounded-full bg-black/50 backdrop-blur-sm" />
-                    <div className="absolute inset-0 rounded-full overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-600 opacity-50 blur transition-all group-hover:opacity-75" />
-                      <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
-                        <rect
-                          className="animate-flow-around"
-                          width="100%"
-                          height="100%"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        />
-                      </svg>
-                    </div>
+                  <button onClick={() => setIsContactModalOpen(true)} className="radius-button radius-button--bright">
+                    <span>Let's Chat!</span>
                   </button>
                 </motion.div>
               </div>
@@ -196,22 +134,19 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Rest of the sections remain the same ... */}
-        <FloatingWorks />
-
         {/* Design Process Section - Updated with new images and content */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
           className="py-32"
         >
-          <h2 className="mb-8 text-3xl font-bold md:text-4xl text-center">My Design Process</h2>
-          <p className="text-center mb-12 text-lg text-gray-400 max-w-2xl mx-auto">
+          <motion.h2 variants={fadeUp} className="mb-8 text-3xl font-bold md:text-4xl text-center">My Design Process</motion.h2>
+          <motion.p variants={fadeUp} className="text-center mb-12 text-lg text-gray-400 max-w-2xl mx-auto">
             My approach to design is iterative and user-centered, focusing on creating meaningful solutions through
             careful research, creative ideation, and thoughtful execution.
-          </p>
+          </motion.p>
 
           <div className="grid gap-8 md:grid-cols-3">
             {[
@@ -239,10 +174,7 @@ export default function AboutPage() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
+                variants={fadeUp}
                 className="group relative overflow-hidden rounded-lg bg-zinc-900"
               >
                 <div className="aspect-video overflow-hidden">
@@ -263,18 +195,18 @@ export default function AboutPage() {
 
         {/* Key Achievements Section - Film strip removed */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
           className="py-32"
         >
-          <h2 className="mb-16 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">Achievements</h2>
+          <motion.h2 variants={fadeUp} className="mb-16 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">Achievements</motion.h2>
 
           {/* Two Column Layout */}
           <div className="grid gap-16 md:grid-cols-2">
             {/* Academic & CCAs - Added new achievement */}
-            <div className="relative">
+            <motion.div variants={fadeUp} className="relative">
               <h3 className="mb-8 text-2xl font-bold">Academic & CCAs</h3>
               <div className="relative rounded-lg border border-cyan-400/20 bg-zinc-900/50 p-6">
                 <div className="absolute -left-1 top-0 h-full w-0.5 bg-cyan-400/20" />
@@ -287,10 +219,10 @@ export default function AboutPage() {
                   <li className="text-gray-300">Awarded Diploma in IXD in 2025</li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Awards */}
-            <div>
+            <motion.div variants={fadeUp}>
               <h3 className="mb-8 text-2xl font-bold">Awards</h3>
               <div className="space-y-6">
                 <div className="rounded-lg border border-cyan-400/20 bg-zinc-900/50 p-6">
@@ -302,10 +234,22 @@ export default function AboutPage() {
                   <p className="text-gray-300">Kampung AWWA Video Challenge</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
 
+        </motion.section>
+
+        {/* Moments - scrapbook of memories from projects & experiences */}
+        <motion.section
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          className="py-32"
+        >
+          <motion.h2 variants={fadeUp} className="mb-16 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">Moments</motion.h2>
+          <Moments />
         </motion.section>
       </div>
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />

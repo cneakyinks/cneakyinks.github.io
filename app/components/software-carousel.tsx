@@ -30,11 +30,6 @@ const SOFTWARE_LIST = [
     removeBackground: false,
   },
   {
-    name: "After Effects",
-    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/adobe-after-effects-svgrepo-com-dqDs6ZyFKod9xX6d9ur1mbjqktGqJd.svg",
-    removeBackground: true,
-  },
-  {
     name: "Premiere Pro",
     icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/adobe-premiere-svgrepo-com-vTQ8Ztlrte1Dops4VyKcxckSncBFqR.svg",
     removeBackground: true,

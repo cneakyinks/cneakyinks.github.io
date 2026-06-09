@@ -354,54 +354,12 @@ export const projects: Project[] = [
     link: "/projects/wanders-enigma",
   },
   {
-    id: 2,
-    title: "Video Production",
-    category: "featured",
-    categories: ["video-production", "marketing"],
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/awwa%20competition.jpg-8AFfbhDuobtaoMIKBjJT5RolrRGG6y.jpeg",
-    role: "Director & Project Lead",
-    subRoles: ["Video Production", "Content Strategy", "Marketing"],
-    description:
-      "Created a promotional video to effectively communicate with seniors and highlight the new active ageing centre's key features.",
-    sector: "Video Production",
-    year: "2023",
-    challenge:
-      "Create a promotional video that effectively communicated to seniors, making it engaging and easy to understand.",
-    process: [
-      {
-        title: "Research and Ideation",
-        description: "Conducted thorough research to gather insights and brainstormed ideas for the promotional video.",
-      },
-      {
-        title: "Storyboarding",
-        description: "Created detailed storyboards to plan the video's structure and content.",
-      },
-      {
-        title: "Prototyping and Testing",
-        description:
-          "Developed prototypes of the video content, conducting user tests with the target audience to gather feedback.",
-      },
-      {
-        title: "Production",
-        description: "Filmed and edited the video, incorporating feedback from testing.",
-      },
-      {
-        title: "Evaluation and Iteration",
-        description: "Collected feedback after the video launch and made necessary adjustments.",
-      },
-    ],
-    outcome:
-      "Developed a clear and engaging video focusing on the centre's key features, ensuring the content was accessible and appealing to the senior audience. The project won an award for its clarity, feasibility, and detail-oriented design.",
-    link: "https://youtube.com/shorts/800sduAfVQc",
-  },
-  {
     id: 3,
     title: "Path of Familiarity",
     category: "featured",
     categories: ["ux", "wayfinding"],
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lm8Eqzdc6IvQ4G4Milftbrgeh0HBFQ.png",
-    role: "Lead Designer",
+    role: "Lead UX Designer",
     subRoles: ["Project Planning", "User Research"],
     description:
       "Created a user-friendly and intuitive navigation system for dementia patients through thematic murals and animal guides.",

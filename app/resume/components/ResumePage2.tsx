@@ -1,4 +1,3 @@
-import { Briefcase } from "lucide-react"
 import { Roboto_Mono } from "next/font/google"
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] })
@@ -44,18 +43,15 @@ export default function ResumePage2() {
     <div className="space-y-6 md:space-y-8 mt-8 md:mt-16 px-2 sm:px-0">
       {/* Experience Continuation */}
       <section>
-        <h3
-          className={`${robotoMono.className} text-xl md:text-2xl mb-4 md:mb-6 text-cyan-400 flex items-center gap-2`}
-        >
-          <Briefcase className="w-5 h-5 md:w-6 md:h-6" />
-          WORK EXPERIENCE
+        <h3 className={`${robotoMono.className} text-xl md:text-2xl mb-4 md:mb-6 text-white`}>
+          MORE WORK EXPERIENCES
         </h3>
         <div className="space-y-6 md:space-y-8">
           {experiences
             .filter((exp) => ["Wag n Wild", "Carnival World", "EKA Training Group"].includes(exp.title))
             .map((exp, index) => (
               <div key={index} className="space-y-2">
-                <h3 className="text-base md:text-xl font-semibold text-cyan-400">
+                <h3 className="text-base md:text-xl font-semibold text-white">
                   {exp.title} | {exp.date}
                 </h3>
                 <p className="text-sm md:text-base text-gray-400">{exp.role}</p>

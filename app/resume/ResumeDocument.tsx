@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
 const workExperience = [
   {
     title: "IT Project Executive — SF Technologies Pte Ltd",
-    meta: "May 2025 – Present · Singapore",
+    meta: "May 2025 – Jul 2026 · Singapore",
     points: [
       "Responsible for understanding business challenges and translating them into effective digital solutions.",
       "Conceptualise and propose ideas, create prototypes and designs, and test for usability and functionality.",
@@ -189,9 +189,10 @@ export default function ResumeDocument() {
             </Link>
           </Text>
           <Text style={styles.summary}>
-            UX Designer with a passion for blending aesthetics with functionality. With 3 years in interaction design, I
-            transform user insights into engaging solutions. Skilled in UX research and interactive prototyping, I create
-            seamless digital experiences that connect with users on both practical and emotional levels.
+            UX Designer with a passion for blending aesthetics with functionality. Beyond 3 years in interaction design,
+            my work experience has equipped me with an understanding of diverse concepts and a solution-driven creative
+            approach, transforming user insights into seamless digital experiences, driven by both practicality and
+            emotion.
           </Text>
         </View>
 

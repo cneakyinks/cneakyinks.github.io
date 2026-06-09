@@ -90,7 +90,7 @@ export default function AboutPage() {
           animate="show"
           className="mb-32"
         >
-          <div className="max-w-5xl mx-auto">
+          <div>
             <div className="space-y-6 w-full text-left">
               <div className="space-y-4">
                 <motion.div variants={fadeUpLg}>
@@ -110,7 +110,7 @@ export default function AboutPage() {
 
                 <motion.p
                   variants={fadeUp}
-                  className="max-w-full md:mx-0 text-base sm:text-lg text-gray-400 md:px-0 text-left"
+                  className="max-w-2xl text-base sm:text-lg text-gray-400 text-left"
                 >
                   I am an explorative interactive designer who brings ideas to life through dynamic experiences,
                   blending physical and digital interactions, with creativity and intent.

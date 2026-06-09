@@ -28,7 +28,7 @@ export default function ResumePage1() {
   const experiences = [
     {
       title: "IT Project Executive — SF Technologies Pte Ltd",
-      date: "May 2025 – Present · Singapore",
+      date: "May 2025 – Jul 2026 · Singapore",
       points: [
         "Responsible for understanding business challenges and translating them into effective digital solutions.",
         "Solutions involve conceptualising and proposing ideas, creating prototypes and designs, and testing for usability and functionality.",
@@ -100,9 +100,10 @@ export default function ResumePage1() {
           </h1>
           <h2 className={`${robotoMono.className} text-lg md:text-xl text-cyan-400`}>Interaction Designer</h2>
           <p className="max-w-2xl text-xs md:text-sm text-gray-300">
-            UX Designer with a passion for blending aesthetics with functionality. With 3 years in interaction design, I
-            transform user insights into engaging solutions. Skilled in UX research and interactive prototyping, I
-            create seamless digital experiences that connect with users on both practical and emotional levels.
+            UX Designer with a passion for blending aesthetics with functionality. Beyond 3 years in interaction design,
+            my work experience has equipped me with an understanding of diverse concepts and a solution-driven creative
+            approach, transforming user insights into seamless digital experiences, driven by both practicality and
+            emotion.
           </p>
         </div>
         <button

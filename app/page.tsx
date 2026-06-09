@@ -30,12 +30,12 @@ export default function Page() {
               <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
                 <motion.div className="space-y-8 lg:flex-1" variants={staggerContainer} initial="hidden" animate="show">
                 <motion.div variants={fadeUpLg}>
-                  <p className="text-lg sm:text-xl text-gray-400 mb-4">
-                    Web Design, Digital Content, and anything interfacely possible.
-                  </p>
                   <LayeredText className="text-4xl sm:text-5xl font-bold tracking-tight text-white md:text-7xl mb-4">
                     I'm Celeste!
                   </LayeredText>
+                  <p className="text-lg sm:text-xl text-gray-400">
+                    I do Web Design, Digital Content, and anything interfacely possible.
+                  </p>
                   <div className="relative w-24 h-1 mt-8">
                     <div className="absolute inset-0 bg-cyan-400 rounded-full" />
                     <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-75" />

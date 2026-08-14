@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
 const workExperience = [
   {
     title: "IT Project Executive — SF Technologies Pte Ltd",
-    meta: "May 2025 – Jul 2026 · Singapore",
+    meta: "May 2025 – Aug 2026 · Singapore",
     points: [
       "Responsible for understanding business challenges and translating them into effective digital solutions.",
       "Conceptualise and propose ideas, create prototypes and designs, and test for usability and functionality.",
@@ -213,6 +213,10 @@ export default function ResumeDocument() {
         {/* Education */}
         <View style={styles.section}>
           <Heading>EDUCATION</Heading>
+          <View style={styles.entry}>
+            <Text style={styles.entryTitle}>Bachelor of Science in Geospatial Intelligence</Text>
+            <Text style={styles.entryMeta}>National University of Singapore · 2026 – 2030</Text>
+          </View>
           <View style={styles.entry}>
             <Text style={styles.entryTitle}>Diploma in Interaction Design (IXD)</Text>
             <Text style={styles.entryMeta}>Nanyang Polytechnic, Singapore · 2022 – 2025</Text>

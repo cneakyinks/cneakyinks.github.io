@@ -28,7 +28,7 @@ export default function ResumePage1() {
   const experiences = [
     {
       title: "IT Project Executive — SF Technologies Pte Ltd",
-      date: "May 2025 – Jul 2026 · Singapore",
+      date: "May 2025 – Aug 2026 · Singapore",
       points: [
         "Responsible for understanding business challenges and translating them into effective digital solutions.",
         "Solutions involve conceptualising and proposing ideas, creating prototypes and designs, and testing for usability and functionality.",
@@ -135,6 +135,12 @@ export default function ResumePage1() {
           <div>
             <h2 className={sectionHeading}>EDUCATION</h2>
             <div className="space-y-4">
+              <div className="relative pl-4 md:pl-6 border-l-2 border-cyan-400">
+                <h3 className="text-base md:text-lg font-semibold text-white">Bachelor of Science in Geospatial Intelligence</h3>
+                <p className="text-sm md:text-base text-gray-400 italic">
+                  National University of Singapore (2026 - 2030)
+                </p>
+              </div>
               <div className="relative pl-4 md:pl-6 border-l-2 border-cyan-400">
                 <h3 className="text-base md:text-lg font-semibold text-white">Diploma in Interaction Design (IXD)</h3>
                 <p className="text-sm md:text-base text-gray-400 italic">

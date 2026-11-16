@@ -34,7 +34,9 @@ export default function Page() {
                     I'm Celeste!
                   </LayeredText>
                   <p className="text-lg sm:text-xl text-gray-400">
-                    I do Web Design, Digital Content, and anything interfacely possible.
+                    <span className="whitespace-nowrap">UI/UX Designer ·</span>{" "}
+                    <span className="whitespace-nowrap">Experience Designer ·</span>{" "}
+                    <span className="whitespace-nowrap">Geospatial Intelligence major</span>
                   </p>
                   <div className="relative w-24 h-1 mt-8">
                     <div className="absolute inset-0 bg-cyan-400 rounded-full" />

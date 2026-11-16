@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { NotebookPen, MousePointerClick, Compass, WandSparkles } from "lucide-react"
+import { NotebookPen, MousePointerClick, Compass, WandSparkles, MapPinned } from "lucide-react"
 import { LayeredText } from "../about/components/layered-text"
 import { fadeUp, staggerContainer } from "@/lib/animations"
 
@@ -26,6 +26,11 @@ const specialties = [
     icon: WandSparkles,
     description: "Exploring the intersection of art and technology",
   },
+  {
+    title: "Spatial & Design Thinking",
+    icon: MapPinned,
+    description: "Making sense of places, maps and data",
+  },
 ]
 
 export default function SkillsSection() {
@@ -49,12 +54,12 @@ export default function SkillsSection() {
               Skills
             </LayeredText>
           </motion.div>
-          <div className="mx-auto flex max-w-6xl flex-col divide-y divide-cyan-400/30 sm:flex-row sm:divide-x sm:divide-y-0">
+          <div className="mx-auto flex max-w-6xl flex-col divide-y divide-cyan-400/30 lg:flex-row lg:divide-x lg:divide-y-0">
             {specialties.map((specialty) => (
               <motion.div
                 key={specialty.title}
                 variants={fadeUp}
-                className="flex-1 px-8 py-8 text-center sm:py-6"
+                className="flex-1 px-6 py-8 text-center lg:py-6"
               >
                 <specialty.icon className="mx-auto mb-4 h-10 w-10" stroke="url(#skill-gradient)" strokeWidth={2} />
                 <h3 className="mb-2 text-lg font-semibold text-white">{specialty.title}</h3>

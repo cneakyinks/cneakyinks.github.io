@@ -1,15 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail } from "lucide-react"
 import { LayeredText } from "../about/components/layered-text"
-import { useState } from "react"
-import ContactModal from "./ContactModal"
+import ContactForm from "./ContactForm"
 import { fadeUp, staggerContainer } from "@/lib/animations"
 
 export default function HomeChatSection() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -26,24 +22,11 @@ export default function HomeChatSection() {
           <motion.p variants={fadeUp} className="mb-8 text-lg text-gray-400 max-w-2xl mx-auto">
             Have an idea or project in mind? Let's talk about it!
           </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-col items-center space-y-4">
-            <a
-              href="mailto:celestenmy23@gmail.com"
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300"
-            >
-              <Mail className="h-6 w-6 mr-2" />
-              cneakyinks@gmail.com
-            </a>
-            <button
-              onClick={() => setIsContactModalOpen(true)}
-              className="radius-button radius-button--deep"
-            >
-              <span>Contact Me</span>
-            </button>
+          <motion.div variants={fadeUp} className="mx-auto max-w-lg">
+            <ContactForm />
           </motion.div>
         </motion.div>
       </div>
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </section>
   )
 }

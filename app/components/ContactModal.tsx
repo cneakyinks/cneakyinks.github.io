@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Mail, Linkedin, X } from "lucide-react"
+import { X } from "lucide-react"
 import { LayeredText } from "../about/components/layered-text"
-import { fadeUp, staggerContainer, springSoft } from "@/lib/animations"
+import { springSoft } from "@/lib/animations"
+import ContactForm from "./ContactForm"
 
 interface ContactModalProps {
   isOpen: boolean
@@ -37,54 +38,27 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={springSoft}
-            className="w-full max-w-[90vw] sm:max-w-lg bg-zinc-900 p-4 sm:p-6 rounded-lg shadow-[0_0_20px_rgba(0,255,255,0.2)] border border-cyan-400/20 max-h-[90vh] overflow-y-auto mx-auto"
+            className="relative w-full max-w-[90vw] sm:max-w-lg bg-zinc-900 p-5 sm:p-8 rounded-lg shadow-[0_0_20px_rgba(0,255,255,0.2)] border border-cyan-400/20 max-h-[90vh] overflow-y-auto mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-              aria-label="Close modal"
+              aria-label="Close"
             >
               <X className="h-6 w-6" />
             </button>
 
-            <LayeredText className="text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl mb-4 sm:mb-6 text-center">
-              Let's Connect
-            </LayeredText>
-
-            <motion.div
-              className="flex justify-center items-center gap-4 sm:gap-8 mb-6 sm:mb-8 mt-6"
-              variants={staggerContainer}
-              initial="hidden"
-              animate="show"
-            >
-              <motion.a
-                variants={fadeUp}
-                href="https://www.linkedin.com/in/celeste-ng-40537528b/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Linkedin className="h-8 w-8" />
-                <span className="sr-only">Connect on LinkedIn</span>
-              </motion.a>
-              <motion.a
-                variants={fadeUp}
-                href="mailto:cneakyinks@gmail.com"
-                className="text-cyan-400 hover:text-cyan-300"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Mail className="h-8 w-8" />
-                <span className="sr-only">Email me</span>
-              </motion.a>
-            </motion.div>
-
-            <p className="text-center text-sm sm:text-base text-gray-400">
-              Whether you want to chat, collaborate, or just say hi, I'd love to hear from you.
+            <div className="flex justify-center">
+              <LayeredText className="text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl mb-3 text-center">
+                Let's Connect
+              </LayeredText>
+            </div>
+            <p className="mb-6 text-center text-sm sm:text-base text-gray-400">
+              Leave a message and your number, and let's chat about your ideas!
             </p>
+
+            <ContactForm onClose={onClose} />
           </motion.div>
         </motion.div>
       )}
